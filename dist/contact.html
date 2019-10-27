@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- using cdn fontawesome icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <!-- link to favicon for later -->
+    <link rel="icon" type="image/png" sizes="96x96" href="img/logosvg/Konvexfavicon.png" />
+    <!-- BOOTSTRAP AND OTHER EXTRA SHIT -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!-- WOW reveal script -->
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!-- link to css -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" />
+
+    <!-- forcaptcha -->
+    <!-- <script src="//www.google.com/recaptcha/api.js"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('reCAPTCHA_site_key', {
+                action: 'homepage'
+            }).then(function(token) {
+                ...
+            });
+        });
+    </script> -->
+
+    <title>Konvex.io | Contact Us</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar-not-main" class="navbar navbar-expand-md navbar-dark bg-primary-color-1 mb-3">
+            <div class="container">
+                <a class="navbar-brand rounded text-secondary-color-1 bg-light" href="index.html#header-section">
+                    <img class="m-1 logo" src="img/logosvg/konvexonly.png" />
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav1">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarNav1">
+                    <ul class="navbar-nav align-items-end ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#about-section">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#work-section">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#resource-section">Resources</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#contact-section"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- CONTACT -->
+    <section id="contact-section">
+      <div class="container">
+        <div class="row">
+          <div class="text-column col-md">
+            <div class="text-contact">
+              <h1 class="h1 mb-3">Contact Us</h1>
+              <p class="lead border-dark border-top border-bottom pt-3 pb-3">
+                Whether you’re looking to collaborate on an upcoming data
+                project, realize the untapped potential of your company’s data,
+                or learn more about data science, we’d love to hear from you.
+                Our data scientists will help you transform your organization.
+              </p>
+              <p>
+                Contact us by filling the form or by e-mailing directly to
+                hello@konvex.io.
+              </p>
+            </div>
+          </div>
+
+          <div class="form-column col-md">
+            <form id="contact-form" method="post">
+              <div class="form-group mb-3">
+                <label for="name" class="mr-2">Your Name:</label>
+                <input
+                  class="form-control mr-2"
+                  type="text"
+                  id="name"
+                  placeholder="Enter name here..."
+                />
+              </div>
+              <div class="form-group mb-3">
+                <label for="email" class="mb-2">Your E-mail:</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="email"
+                  placeholder="Enter e-mail here..."
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">How can we help you?</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="4"
+                  placeholder="Give us a short description of your inquiry..."
+                ></textarea>
+              </div>
+
+              <div class="row text-center">
+                <div class="col-12">
+                  <!-- <div
+                    class="g-recaptcha"
+                    data-sitekey="6LcaF7YUAAAAAD_9umdnzcgCedVWTlpeDfnEXdWl"
+                    class="form-control"
+                    style="width:100%;"
+                  ></div> -->
+                  <button
+                    type="button"
+                    onClick="submitToAPI(event)"
+                    class="btn btn-dark"
+                    style="margin-top:20px;"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- FOOTER  -->
+    <!-- FOOTER  -->
+    <section id="footer-section" class="page-footer section">
+      <footer>
+        Copyright &copy; 2019 Konvex.io LLC <br />
+        Orlando, FL, USA
+      </footer>
+    </section>
+
+    <!-- bootstrap and main js file, load jquery first, do not use slim jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

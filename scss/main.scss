@@ -1,0 +1,421 @@
+@import "config.scss";
+@import "navbar.scss";
+@import "contact.scss";
+//UTILITYCLASSES
+body {
+    margin: 0;
+    height: 100%;
+    // // font-family: "Source Sans Pro",
+    // sans-serif;
+    line-height: 1.5;
+    background-color: white;
+}
+
+
+/* Sections */
+
+.section {
+    padding: 2rem 0;
+    // height: 100vh;
+    // width: 100%;
+    font-family: 'Muli', sans-serif !important;
+}
+
+.col-md {
+    font-family: 'Muli', sans-serif;
+}
+
+.h1 .h2 .h3 {
+    font-family: 'Philosopher', sans-serif;
+}
+
+.section-head {
+    font-size: 3rem;
+    margin: 0;
+    width: 100%;
+}
+
+////HEADER
+#header-section {
+    height: 100vh;
+    #nav-showcase:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: -4;
+        background: url("../img/showcase.jpg") no-repeat center/cover;
+        //parallax
+        background-attachment: fixed;
+        // /* vw for viewportwidth */
+        height: 100%;
+        // position: relative;
+        overflow-y: hidden;
+        filter: blur(2px);
+    }
+    #nav-showcase {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        .navbar-brand {
+            background-color: rgba(white, 0.9);
+            img {
+                height: 6rem;
+                width: 24rem;
+            }
+        }
+        ul {
+            li {
+                a {
+                    color: $secondary-color-1;
+                    font-size: 1.15rem;
+                    width: 100%;
+                    margin: 0 1rem 0 1rem;
+                    &:hover {
+                        color: $secondary-color-2;
+                        @include easeOut;
+                    }
+                }
+            }
+        }
+        .section-main {
+            padding: 0;
+            margin: 0;
+            height: auto;
+            margin-right: 5vw;
+            h1 {
+                margin-top: 30vh;
+                width: 100%;
+                color: set-color($primary-color-1);
+                text-shadow: 0.4rem 0.4rem 0.5rem #222222;
+                text-align: right;
+            }
+            h2 {
+                margin-top: 5vh;
+                color: set-color($primary-color-1);
+                text-shadow: 0.4rem 0.4rem 0.5rem #222222;
+                text-align: right;
+            }
+        }
+        .freepik {
+            display: inline-block;
+            position: absolute;
+            color: #bdbdbdad;
+            margin-top: 30vh;
+        }
+    }
+}
+
+// ABOUT
+// ABOUT
+// ABOUT
+#about-section {
+    margin-top: 3rem;
+    padding-top: 4rem;
+    .text {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-evenly; used bootstrap
+        // align-items: center;
+        background-color: $secondary-color-2;
+        height: 100vh;
+        color: set-color($secondary-color-1);
+        // text-shadow: .15rem .15rem 0.15rem #5c5c5c85;
+        .section-head {
+            text-align: center;
+            // margin: 2rem 0;
+        }
+        p {
+            padding: 3rem 3rem;
+            text-align: justify;
+            width: 100%;
+            border-top: 2px solid set-color($secondary-color-1);
+            border-bottom: 2px solid set-color($secondary-color-1);
+            font-size: 1rem;
+        }
+        .btn {
+            font-size: 1.5rem;
+            width: 50%;
+            border: set-color($secondary-color-1) solid 5px;
+            color: set-color($secondary-color-1);
+            font-weight: bold;
+            text-decoration: none;
+            // padding: 1rem 1rem;
+            border-radius: 1rem;
+        }
+    }
+}
+
+.collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "img-container-1 img-container-2""img-container-3 img-container-4";
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    .img-container-1 {
+        background: url("../img/4669.jpg") no-repeat center/cover;
+        background-position: center;
+        height: 50vh;
+        // /* vw for viewportwidth */
+        // &:before {
+        //     content: "";
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     width: 100%;
+        //     height: 100%;
+        //     background: url('../img/4669.jpg') no-repeat center/cover;
+        //     filter: grayscale(100%);
+        // }
+    }
+    .img-container-2 {
+        background: url("../img/5270.jpg") no-repeat center/cover;
+        background-position: center;
+        // /* vw for viewportwidth */
+        filter: grayscale(100%);
+        height: 50vh;
+    }
+    .img-container-3 {
+        background: url("../img/25060.jpg") no-repeat center/cover;
+        background-position: center;
+        // /* vw for viewportwidth */
+        filter: grayscale(100%);
+        height: 50vh;
+    }
+    .img-container-4 {
+        background: url("../img/4669.jpg") no-repeat center/cover;
+        background-position: center;
+        // /* vw for viewportwidth */
+        height: 50vh;
+    }
+}
+
+// WORK
+// WORK
+// WORK
+#work-section {
+    margin-top: 3rem;
+    padding-top: 6rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    .section-head {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .container-fluid {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 2rem;
+        padding: 0 0;
+        .work-img-container {
+            //for position absolute to work, must have parent with position, flex does not do this by default, need to add position: relative
+            position: relative;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            height: 80vh;
+            h2 {
+                font-size: 2rem;
+            }
+            .work-container-1:before,
+            .work-container-2:before,
+            .work-container-3:before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                z-index: -4;
+                width: 100%;
+                height: 50vh;
+                overflow-y: hidden;
+            }
+            .work-container-1:before {
+                background: url("../img/logosvg/Neural Network Transparent.png") no-repeat center/cover; // /* vw for viewportwidth */
+            }
+            .work-container-2:before {
+                background: url("../img/logosvg/Circuit Board Transparent.png") no-repeat center/cover; // /* vw for viewportwidth */
+            }
+            .work-container-3:before {
+                background: url("../img/logosvg/Cloud Architecture Transparent.png") no-repeat center/cover; // /* vw for viewportwidth */
+            }
+            .work-container-1 {
+                display: flex;
+                align-items: flex-start;
+            }
+            .work-container-2 {
+                display: flex;
+                align-items: center;
+            }
+            .work-container-3 {
+                display: flex;
+                align-items: flex-end;
+            }
+            .work-container-1,
+            .work-container-2,
+            .work-container-3 {
+                width: 30vw;
+                height: 80%;
+                margin: 0 0rem;
+                padding: 0 0;
+                z-index: 1;
+                .work-header {
+                    display: inline-block;
+                    text-align: right;
+                    width: 100%;
+                    padding: 0 1rem;
+                    margin: 0;
+                    color: $secondary-color-1;
+                    @include easeOut;
+                }
+                .work-hover {
+                    display: flex;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    height: 100%;
+                    width: 100%;
+                    padding: 0 0;
+                    margin: 0 0;
+                    opacity: 0;
+                    top: 0;
+                    .work-desc {
+                        text-align: justify;
+                        padding: 0rem 1rem;
+                        color: $secondary-color-1;
+                        font-size: 1rem;
+                    }
+                    .work-icons {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .work-icon-row {
+                            display: flex;
+                            justify-content: space-evenly;
+                            margin: 1rem 1rem 0 1rem;
+                            .work-icon {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                .icon {
+                                    width: 100px;
+                                }
+                                .work-icon-title {
+                                    font-size: 1rem;
+                                    font-family: "Source Sans Pro", sans-serif;
+                                    width: 100%;
+                                    text-align: center;
+                                }
+                                .icon-python {
+                                    width: 115px;
+                                }
+                                .icon-r {
+                                    width: 75px;
+                                }
+                                .icon-scikit {
+                                    height: 130px;
+                                }
+                                .icon-pytorch {
+                                    width: 100px;
+                                }
+                                .icon-tensorflow {
+                                    width: 115px;
+                                }
+                                .icon-hadoop {
+                                    width: 115px;
+                                }
+                            }
+                        }
+                    }
+                    .work-header-hover {
+                        text-align: left;
+                        padding: 0rem 1rem;
+                    }
+                }
+            }
+            &:hover {
+                .work-container-1:before,
+                .work-container-2:before,
+                .work-container-3:before {
+                    filter: blur(5px) grayscale(80%);
+                }
+                @include easeOut;
+                // clip-path: polygon(0% 0%, 100% 10%, 100% 90%, 0% 100%);
+                .work-header {
+                    opacity: 0;
+                    // height: 0;
+                    @include easeOut;
+                }
+                .work-hover {
+                    opacity: 1;
+                    // height: 100%;
+                    @include easeOut;
+                }
+                // transition: all 0.8s ease-in;
+            }
+        }
+    }
+}
+
+// RESOURCE
+// RESOURCE
+// RESOURCE
+#resource-section {
+    width: 100%;
+    height: 100vh;
+    margin: 8rem 0;
+    bottom: 0;
+    padding: 0;
+    background-color: $primary-color-2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    * {
+        color: set-color($primary-color-2);
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .carousel-item {
+        max-height: 50vh;
+        max-width: 100%;
+    }
+}
+
+// FOOTER
+// FOOTER
+// FOOTER
+html {
+    height: 100%
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-section {
+    width: 100%;
+    height: 85px;
+    margin-top: auto;
+    bottom: 0;
+    background-color: $secondary-color-2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    footer {
+        color: set-color($secondary-color-1);
+        font-size: 1rem;
+    }
+}

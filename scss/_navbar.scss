@@ -1,0 +1,88 @@
+/* NAVBAR-main*/
+
+#navbar {
+    font-family: 'Philosopher', sans-serif;
+    .nav-link {
+        color: white;
+    }
+    position: fixed;
+    top: -100px;
+    z-index: 9999;
+    width: 100%;
+    /* Full width */
+    transition: top 0.5s;
+    /* Transition effect when sliding down (and up) */
+    .navbar-brand {
+        // border-radius: 1rem;
+        margin: 0 1rem 0 1rem;
+        .logo {
+            height: 2rem;
+            width: 8rem;
+        }
+    }
+    div .collapse {
+        ul {
+            li {
+                list-style: none;
+                a {
+                    color: $secondary-color-1;
+                    width: 100%;
+                    font-size: 1.2rem;
+                    margin: 0 1rem 0 1rem;
+                    &:hover {
+                        color: $secondary-color-2;
+                        @include easeOut;
+                    }
+                }
+                .active {
+                    color: $secondary-color-2 !important;
+                    @include easeOut;
+                }
+            }
+        }
+    }
+}
+
+#navbar-not-main {
+    font: 1rem/1rem 'Philosopher', sans-serif;
+    .nav-link {
+        color: white;
+    }
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+    /* Transition effect when sliding down (and up) */
+    .navbar-brand {
+        // border-radius: 1rem;
+        margin: 0 1rem 0 1rem;
+        .logo {
+            height: 2rem;
+            width: 8rem;
+        }
+    }
+    div .collapse {
+        ul {
+            li {
+                list-style: none;
+                a {
+                    color: $secondary-color-1;
+                    width: 100%;
+                    font-size: 1.2rem;
+                    margin: 0 1rem 0 1rem;
+                    &:hover {
+                        color: $secondary-color-2;
+                        @include easeOut;
+                    }
+                }
+                .active {
+                    color: $secondary-color-2 !important;
+                    @include easeOut;
+                }
+            }
+        }
+    }
+}
+
+a#openup {
+    display: none;
+}

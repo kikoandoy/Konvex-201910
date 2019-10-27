@@ -1,0 +1,171 @@
+// Colors
+
+$black1: #525252;
+$black2: #414141;
+$black3: #313131;
+$black4: #1C1B1B;
+$black5: #000000;
+$foreground: #6F6D78;
+$white1: #ffffff;
+$white2: #F0F0F0;
+$gray: #8B8C8C;
+$primary: #6C19B3;
+
+
+// Font Styles
+
+@mixin en_h1 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 56px;
+}
+
+@mixin en_h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 42px;
+}
+
+@mixin en_h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 36px;
+}
+
+@mixin en_body1_bold {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+@mixin en_body1_regular {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+@mixin en_body2_bold {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+@mixin en_body2_regular {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 28px;
+
+}
+
+@mixin en_bodymobile_bold {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+@mixin en_bodymobile_regular {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
+// Borders
+
+@mixin border_primary {
+    border: 1px solid $primary;
+    border-radius: 44px;
+}
+
+
+// Shadows
+
+@mixin drop-shadow_regular {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+@mixin drop-shadow_spread {
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+@mixin drop-shadow_subtle {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+// Grid
+
+
+// Links
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+// Media Queries
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$mq-breakpoints: (
+  'sm': 'screen and (max-width: ' map-get($grid-breakpoints, sm) ')',
+  'md': 'screen and (max-width: ' map-get($grid-breakpoints, md) ')',
+  'lg': 'screen and (max-width: ' map-get($grid-breakpoints, lg) ')',
+  'xl': 'screen and (max-width: ' map-get($grid-breakpoints, xl) ')'
+) !default;
+
+@mixin media-screen($mq-breakpoint: sm) {
+  @media #{map-get($mq-breakpoints, $mq-breakpoint)} {
+    @content;
+  }
+}
+
+@mixin media-retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+// Responsiveness
+
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+
+html {
+    font-size: 100%; 
+    overflow-x: hidden;
+}
+
+@media (min-width: 640px) { body {font-size:1rem;} } 
+@media (min-width:960px) { body {font-size:1.2rem;} } 
+@media (min-width:1100px) { body {font-size:1.5rem;} }
