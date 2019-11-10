@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
     <!-- link to favicon for later -->
     <link rel="icon" type="image/png" sizes="96x96" href="img/logosvg/Konvexfavicon.png" />
-    <!-- BOOTSTRAP AND OTHER EXTRA SHIT -->
+    <!-- BOOTSTRAP AND OTHERS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <!-- WOW reveal script -->
     <script src="js/wow.min.js"></script>
@@ -17,8 +17,8 @@
         new WOW().init();
     </script>
     <!-- link to css -->
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/konvex201910/index.css" />
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" />
 
     <!-- forcaptcha -->
@@ -37,46 +37,42 @@
 </head>
 
 <body>
-    <header>
-        <nav id="navbar-not-main" class="navbar navbar-expand-md navbar-dark bg-primary-color-1 mb-3">
-            <div class="container">
-                <a class="navbar-brand rounded text-secondary-color-1 bg-light" href="index.html#header-section">
-                    <img class="m-1 logo" src="img/logosvg/konvexonly.png" />
-                </a>
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav1">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-                <div class="collapse navbar-collapse" id="navbarNav1">
-                    <ul class="navbar-nav align-items-end ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#about-section">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#work-section">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#resource-section">Resources</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#contact-section"
-                  >Contact Us</a
-                >
-              </li>
-            </ul>
-          </div>
+  <div class="nav-container">
+    <div class="navigation">
+      <a href="../dist/index.html">
+        <div>
+          <img src="../dist/img/logo.png" alt="">
         </div>
-      </nav>
-    </header>
+      </a>
+      <div class="navitems">
+        <p class="navitem">
+          <a href="../dist/index.html#about">
+            About
+          </a> 
+        </p>
+        <p class="navitem">
+          <a href="../dist/index.html#services">
+            Services
+          </a> 
+        </p>
+        <a href="../dist/contact.html">
+          <div class="secondary btn">
+            <p>
+              Contact Us
+            </p> 
+          </div>
+      </a>
+      </div>
+  </div>
 
     <!-- CONTACT -->
     <section id="contact-section">
-      <div class="container">
+      <div class="contact-container">
         <div class="row">
           <div class="text-column col-md">
             <div class="text-contact">
-              <h1 class="h1 mb-3">Contact Us</h1>
-              <p class="lead border-dark border-top border-bottom pt-3 pb-3">
+              <h1>Contact Us</h1>
+              <p>
                 Whether you’re looking to collaborate on an upcoming data
                 project, realize the untapped potential of your company’s data,
                 or learn more about data science, we’d love to hear from you.
@@ -86,36 +82,39 @@
                 Contact us by filling the form or by e-mailing directly to
                 hello@konvex.io.
               </p>
+              <p>
+                Based in Orlando, FL.
+              </p>
             </div>
           </div>
 
           <div class="form-column col-md">
             <form id="contact-form" method="post">
               <div class="form-group mb-3">
-                <label for="name" class="mr-2">Your Name:</label>
+                <label for="name" class="mr-2">FULL NAME</label>
                 <input
                   class="form-control mr-2"
                   type="text"
                   id="name"
-                  placeholder="Enter name here..."
+                  placeholder="e.g. John Doe"
                 />
               </div>
               <div class="form-group mb-3">
-                <label for="email" class="mb-2">Your E-mail:</label>
+                <label for="email" class="mb-2">EMAIL</label>
                 <input
                   class="form-control"
                   type="text"
                   id="email"
-                  placeholder="Enter e-mail here..."
+                  placeholder="e.g. johndoe@gmail.com"
                 />
               </div>
               <div class="form-group">
-                <label for="message">How can we help you?</label>
+                <label for="message">MESSAGE</label>
                 <textarea
                   class="form-control"
                   id="message"
                   rows="4"
-                  placeholder="Give us a short description of your inquiry..."
+                  placeholder="Write your message here."
                 ></textarea>
               </div>
 
@@ -130,10 +129,9 @@
                   <button
                     type="button"
                     onClick="submitToAPI(event)"
-                    class="btn btn-dark"
-                    style="margin-top:20px;"
+                    class="primary btn"
                   >
-                    Submit
+                    Send
                   </button>
                 </div>
               </div>
@@ -143,15 +141,12 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <!-- FOOTER  -->
-    <!-- FOOTER  -->
-    <section id="footer-section" class="page-footer section">
-      <footer>
-        Copyright &copy; 2019 Konvex.io LLC <br />
-        Orlando, FL, USA
-      </footer>
-    </section>
+    <div class="wrapper footer">
+        <div class="footer-content">
+            <p>Copyright © 2019 Konvex.io LLC</p>
+            <p>Orlando, FL, USA</p>
+        </div>
+    </div>
 
     <!-- bootstrap and main js file, load jquery first, do not use slim jquery -->
     <script
