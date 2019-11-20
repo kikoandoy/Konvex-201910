@@ -8,8 +8,6 @@ body {
 // Navbar
 
 #index .nav-container {
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 
@@ -53,6 +51,9 @@ body {
         margin: auto;
         @include en_body1_bold;
     }
+    @include media-screen(sm) {
+        width: 124px;
+    }
 }
 
 .secondary.btn {
@@ -81,12 +82,16 @@ body {
     background-size: cover;
     height: 100vh;
     position: relative;
+    @include media-screen(sm) {
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }
 
 .hero-container {
     display: flex;
     align-items: center;
-    height: calc(100vh - 72px);
+    height: calc(100vh - 96px);
     margin: 0 80px;
 }
 
@@ -103,6 +108,14 @@ body {
     background: $white1;
     display: flex;
     justify-content: center;
+    @include media-screen(sm) {
+        display: block;
+        height: initial;
+        &:nth-child(3) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
 }
 
 .details {
@@ -113,10 +126,22 @@ body {
         @include en_h3;
         color: $primary;
         margin-bottom: 40px;
+        @include media-screen(sm) {
+            margin-bottom: 24px;
+        }
     }
     p.description {
         @include en_body1_regular;
         margin-bottom: 40px;
+    }
+    @include media-screen(sm) {
+        padding: initial;
+    }
+}
+
+.details-content {
+    @include media-screen(sm) {
+        padding-top: 40px;
     }
 }
 
@@ -126,6 +151,10 @@ body {
         filter: grayscale(100%);
         max-height: 48px;
         margin: 0 40px 32px 0;
+        @include media-screen(sm) {
+            max-height: 36px;
+            margin-right: 32px;
+        }
     }
 }
 
@@ -146,6 +175,10 @@ body {
         background: url('../../img/bg-cloud.jpg');
         background-size: cover;
     }
+    @include media-screen(sm) {
+        width: 100vw;
+        height: 100vw;
+    }
 }
 
 // Features
@@ -160,6 +193,9 @@ h1.header {
     @include en_h2;
     color: $black3;
     margin: 0 auto 56px;
+    @include media-screen(sm) {
+        margin-bottom: 40px;
+    }
 }
 
 .features-container {
@@ -253,6 +289,9 @@ h1.header {
     padding: 72px 0;
     &.footer {
         background: $primary;
+        @include media-screen(sm) {
+            padding: 48px 0 72px;
+        }
     }
 }
 
@@ -270,6 +309,11 @@ h1.header {
     text-align: center;
     img {
         max-height: 72px;
+        @include media-screen(sm) {
+            max-height: 56px;
+            margin: 0 auto 32px;
+            display: block;
+        }
     }
 }
 
@@ -282,6 +326,12 @@ h1.header {
     line-height: 30px;
     color: $white2;
     padding: 0 56px;
+    @include media-screen(sm) {
+        padding: 0 16px;
+        p {
+            margin: 0;
+        }
+    }
 }
 
 
