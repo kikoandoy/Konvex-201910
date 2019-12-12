@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
         <!-- link to favicon for later -->
         <link rel="icon" type="image/png" sizes="96x96" href="img/logosvg/Konvexfavicon.png" />
-        <!-- BOOTSTRAP AND OTHER EXTRA SHIT -->
+        <!-- BOOTSTRAP -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!-- WOW reveal script -->
         <script src="js/wow.min.js"></script>
@@ -29,7 +29,39 @@
     </head>
 
     <body id="index">
+
+        <div id="myNav" class="overlay">
+            <a href="../dist/index.html">
+                <div>
+                    <img src="../dist/img/logo.png" alt="">
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <div class="navitems">
+                    <p class="navitem">
+                    <a href="../dist/index.html#about">
+                        About
+                    </a> 
+                    </p>
+                    <p class="navitem">
+                    <a href="../dist/index.html#services">
+                        Services
+                    </a> 
+                    </p>
+                    <a href="../dist/contact.html">
+                        <div class="secondary btn">
+                            <p>
+                            Contact Us
+                            </p> 
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         
+
         <div class="hero-wrapper">
             <div class="hero-container">
               <div class="hero-content">
@@ -41,35 +73,47 @@
                   </p>
               </div>
             </div>
-            <div class="nav-container">
-                <div class="navigation">
-                    <a href="../dist/index.html">
-                      <div>
-                        <img src="../dist/img/logo.png" alt="">
-                      </div>
-                    </a>
-                    <div class="navitems">
-                      <p class="navitem">
-                        <a href="../dist/index.html#about">
-                          About
-                        </a> 
-                      </p>
-                      <p class="navitem">
-                        <a href="../dist/index.html#services">
-                          Services
-                        </a> 
-                      </p>
-                      <a href="../dist/contact.html">
-                        <div class="secondary btn">
-                          <p>
-                            Contact Us
-                          </p> 
-                        </div>
-                    </a>
+            
+            <div class="navbar-wagon">
+                <!-- Logo -->
+                <a href="../dist/index.html" class="navbar-wagon-brand">
+                    <img src="../dist/img/logo.png" alt="">
+                </a>
+                <div class="collapsible-menu">
+                    <input type="checkbox" id="menu">
+                    <label for="menu"><img src="../dist/img/hamburger-menu.svg" alt="" id="btn-menu"style="font-size:44px;cursor:pointer" onclick="openNav()"></label>
+                </div>
+            
+                <!-- Navigation -->
+                <div class="navbar-wagon-margin hidden-xs hidden-sm">
+                    <div>
+                        <div class="navitems">
+                        <p class="navitem">
+                            <a href="../dist/index.html#about">
+                            About
+                            </a> 
+                        </p>
+                        <p class="navitem">
+                            <a href="../dist/index.html#services">
+                            Services
+                            </a> 
+                        </p>
+                        <a href="../dist/contact.html">
+                            <div class="secondary btn">
+                            <p>
+                                Contact Us
+                            </p> 
+                            </div>
+                        </a>
                     </div>
-                  </div>
+                </div>
             </div>
-          </div>
+        </div>
+    </div>
+        
+
+
+                
           
           <section id="about">
                 <div class="details-wrapper">
@@ -191,11 +235,33 @@
             </div>
         </div>
 
-        <!-- bootstrap and main js file, load jquery first, do not use slim jquery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="js/main.js"></script>
+      
+       
+    <script>
+        function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+        }
+        function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+        }
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var windowHeight = $(window).height();
+            if ($(window).width() > 576) {
+                if (document.body.scrollTop > windowHeight || document.documentElement.scrollTop > windowHeight) {
+                    document.getElementsByClassName("navbar-wagon")[0].style.position = "fixed";
+                    document.getElementsByClassName("navbar-wagon")[0].style.top = 0;
+                } else {
+                    document.getElementsByClassName("navbar-wagon")[0].style.position = "relative";
+                }
+            };
+        }
+    </script>
+
+    <!-- TOP / NAVBAR JS -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>    
+
     </body>
 
 </html>

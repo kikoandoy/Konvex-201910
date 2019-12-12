@@ -3,26 +3,27 @@
 body {
     background: $white1;
     color: $foreground;
+    margin: 0;
 }
 
 // Navbar
 
-#index .nav-container {
-    width: 100%;
-}
+// #index .nav-container {
+//     width: 100%;
+// }
 
-.navigation {
-    display: flex;
-    position: relative;
-    height: 96px;
-    padding: 0 80px;
-    align-items: center;
-    background: $white1;
-    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.12);
-    img {
-        max-width: 192px;
-    }
-}
+// .navigation {
+//     display: flex;
+//     position: relative;
+//     height: 96px;
+//     padding: 0 80px;
+//     align-items: center;
+//     background: $white1;
+//     box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.12);
+//     img {
+//         max-width: 192px;
+//     }
+// }
 
 .navitems {
     position: absolute;
@@ -35,11 +36,251 @@ body {
         color: $foreground;
         text-decoration: none;
     }
+    @include media-screen(md) {
+        display: initial;
+        position: initial;
+        right: initial;
+        #{$a-tags} {
+            @include en_body1_bold;
+            font-size: 30px;
+        }
+    }
 }
 
 .navitem {
     margin: 8px 32px 8px 0;
+    @include media-screen(md) {
+        margin-bottom: 32px;
+    }
 }
+
+
+
+/* Main navbar */
+.navbar-wagon {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+    background: white;
+    height: 96px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100vw;
+    z-index: 99;
+    will-change: transform;
+    transition: transform 0.3s;
+    // transform: translateY(-140px);
+  }
+  
+  @include media-screen(md) {
+    .navbar-wagon {
+      height: 64px;
+      display: block;
+      transform: translateY(0px) !important;
+      position: absolute;
+      top: 0;
+      background: none;
+      z-index: 2;
+      box-shadow: none;
+    }
+  }
+  
+  /* Logo */
+  .navbar-wagon-brand img {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 36px;
+    margin: 30px 80px;
+    @include media-screen(md) {
+        height: 32px;
+        margin: 16px 20px;
+    }
+  }
+
+  
+  
+  #logo {
+    height: 55px;
+    position: absolute;
+    left: 150px;
+    top: 10px;
+  }
+  
+  @include media-screen(md) {
+    #logo {
+      height: 37px;
+      left: 0px;
+      top: 0px;
+      margin: 15px 19px 12px 19px;
+      z-index: 2;
+    }
+  }
+  
+  #btn-menu {
+    opacity: 0;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  
+  @include media-screen(md) {
+    #btn-menu {
+      height: 44px;
+      margin: 15px 19px 12px 19px;
+      opacity: 1;
+    }
+  }
+  
+  /* Right section */
+  .navbar-wagon-margin {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    margin-top: 20px;
+  }
+  
+  @include media-screen(md) {
+    .navbar-wagon-margin {
+      visibility: hidden;
+    }
+  }
+  
+  /* Basic navbar item */
+  .navbar-wagon-item {
+    cursor: pointer;
+    padding: 0 20px;
+  }
+  
+  /* Navbar link */
+  .navbar-wagon-link {
+    color: #0A2B39;
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Noto Sans JP";
+    width: 150px;
+  }
+  
+  .navbar-wagon-link:hover {
+    color: #1C97D7 !important;
+    text-decoration: none;
+  }
+  
+  .navbar-wagon-link:visited {
+    color: #0A2B39;
+    text-decoration: none;
+  }
+  
+  .collapsible-menu {
+    background: white;
+    height: 60px;
+    width: 100vw;
+    position: absolute;
+    left: 0px;
+    display: none;
+  }
+  
+  @include media-screen(md) {
+    .collapsible-menu {
+      display: block;
+      background: none;
+    }
+  }
+  
+  .collapsible-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .collapsible-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .collapsible-menu label {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 0 !important;
+  }
+  
+  input#menu {
+    display: none;
+  }
+  
+  .overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-y: hidden;
+    transition: 0.5s;
+    @include media-screen(md) {
+        a div img {
+            height: 32px;
+        }
+    }
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    @include media-screen(md) {
+        margin: 72px 32px;
+        top: initial;
+        text-align: initial;
+    }
+  }
+  
+  .overlay a {
+    font-family: "Noto Sans JP";
+    padding: 8px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #0A2B39;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus, .overlay a:visited {
+    color: #0A2B39;
+    text-decoration: none;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: -9px;
+    right: 7px;
+    font-size: 44px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay {
+      overflow-y: auto;
+    }
+    .overlay a {
+      font-size: 20px;
+    }
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+  
+  #myNav {
+    z-index: 99;
+  }
+
 
 .btn {
     width: 200px;
@@ -85,6 +326,7 @@ body {
     @include media-screen(sm) {
         background-size: contain;
         background-repeat: no-repeat;
+        height: initial;
     }
 }
 
@@ -93,6 +335,12 @@ body {
     align-items: center;
     height: calc(100vh - 96px);
     margin: 0 80px;
+    @include media-screen(sm) {
+        align-items: flex-end;
+        padding-bottom: 12vw;
+        height: 148vw;
+        margin: 0 15px;
+    }
 }
 
 .title {
@@ -339,19 +587,37 @@ h1.header {
 
 // Body
 
+#contact-page section {
+    min-height: calc(100vh - 476px);
+}
+
 #contact-section {
     margin: 72px 0;
 }
 
 .contact-container {
     margin: 0 80px;
+    @include media-screen(sm) {
+        margin: initial;
+        .row {
+            margin: initial;
+        }
+    }
 }
 
 .text-column {
     h1 {
         @include en_h2;
         margin-bottom: 40px;
+        @include media-screen(md) {
+            font-size: 36px;
+            font-weight: 300;
+        }
     }
+}
+
+.text-contact {
+    margin-bottom: 40px;
 }
 
 

@@ -36,8 +36,8 @@
     <title>Konvex.io | Contact Us</title>
 </head>
 
-<body>
-  <div class="nav-container">
+<body id="contact-page">
+  <!-- <div class="nav-container">
     <div class="navigation">
       <a href="../dist/index.html">
         <div>
@@ -63,13 +63,81 @@
           </div>
       </a>
       </div>
+  </div> -->
+
+  <div id="myNav" class="overlay">
+      <a href="../dist/index.html">
+        <div>
+            <img src="../dist/img/logo.png" alt="">
+        </div>
+      </a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+            <div class="navitems">
+              <p class="navitem">
+              <a href="../dist/index.html#about">
+                  About
+              </a> 
+              </p>
+              <p class="navitem">
+              <a href="../dist/index.html#services">
+                  Services
+              </a> 
+              </p>
+              <a href="../dist/contact.html">
+                  <div class="secondary btn">
+                      <p>
+                      Contact Us
+                      </p> 
+                  </div>
+              </a>
+          </div>
+      </div>
   </div>
+
+  <div class="navbar-wagon">
+      <!-- Logo -->
+      <a href="../dist/index.html" class="navbar-wagon-brand">
+          <img src="../dist/img/logo.png" alt="">
+      </a>
+      <div class="collapsible-menu">
+          <input type="checkbox" id="menu">
+          <label for="menu"><img src="../dist/img/hamburger-menu.svg" alt="" id="btn-menu"style="font-size:44px;cursor:pointer" onclick="openNav()"></label>
+      </div>
+  
+      <!-- Navigation -->
+      <div class="navbar-wagon-margin hidden-xs hidden-sm">
+          <div>
+              <div class="navitems">
+              <p class="navitem">
+                  <a href="../dist/index.html#about">
+                  About
+                  </a> 
+              </p>
+              <p class="navitem">
+                  <a href="../dist/index.html#services">
+                  Services
+                  </a> 
+              </p>
+              <a href="../dist/contact.html">
+                  <div class="secondary btn">
+                  <p>
+                      Contact Us
+                  </p> 
+                  </div>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
 
     <!-- CONTACT -->
     <section id="contact-section">
       <div class="contact-container">
         <div class="row">
-          <div class="text-column col-md">
+          <div class="text-column col-md-6">
             <div class="text-contact">
               <h1>Contact Us</h1>
               <p>
@@ -88,7 +156,7 @@
             </div>
           </div>
 
-          <div class="form-column col-md">
+          <div class="form-column col-md-6">
             <form id="contact-form" method="post">
               <div class="form-group mb-3">
                 <label for="name" class="mr-2">FULL NAME</label>
@@ -119,7 +187,7 @@
               </div>
 
               <div class="row text-center">
-                <div class="col-12">
+                <div>
                   <!-- <div
                     class="g-recaptcha"
                     data-sitekey="6LcaF7YUAAAAAD_9umdnzcgCedVWTlpeDfnEXdWl"
@@ -165,5 +233,29 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/main.js"></script>
+    <script>
+        function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+        }
+        function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+        }
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            var windowHeight = $(window).height();
+            if ($(window).width() > 576) {
+                if (document.body.scrollTop > windowHeight || document.documentElement.scrollTop > windowHeight) {
+                    document.getElementsByClassName("navbar-wagon")[0].style.position = "fixed";
+                    document.getElementsByClassName("navbar-wagon")[0].style.top = 0;
+                } else {
+                    document.getElementsByClassName("navbar-wagon")[0].style.position = "relative";
+                }
+            };
+        }
+    </script>
+    
+    <!-- TOP / NAVBAR JS -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script> 
   </body>
 </html>
